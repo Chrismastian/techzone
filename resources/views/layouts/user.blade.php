@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -379,9 +379,9 @@
             <div class="col-md-3">
                 <h6>Information</h6>
                 <ul class="list-unstyled" style="line-height:2">
-                    <li><a href="#">About Us</a></li>
-                    <li><a href="#">How to Order</a></li>
-                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="{{ route('page.about') }}">About Us</a></li>
+                    <li><a href="{{ route('page.how_to_order') }}">How to Order</a></li>
+                    <li><a href="{{ route('page.privacy') }}">Privacy Policy</a></li>
                 </ul>
             </div>
             <div class="col-md-3">

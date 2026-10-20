@@ -26,6 +26,16 @@ Route::get('/produk/{category}/{id}', [UserProductController::class, 'show'])
 
 /*
 |--------------------------------------------------------------------------
+| Information pages
+|--------------------------------------------------------------------------
+*/
+
+Route::view('/about', 'user.pages.about')->name('page.about');
+Route::view('/how-to-order', 'user.pages.how-to-order')->name('page.how_to_order');
+Route::view('/privacy', 'user.pages.privacy')->name('page.privacy');
+
+/*
+|--------------------------------------------------------------------------
 | Cart & checkout
 |--------------------------------------------------------------------------
 */
