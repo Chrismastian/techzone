@@ -15,7 +15,7 @@ class CheckoutController extends Controller
         $cart = Session::get('cart', []);
 
         if ($cart === []) {
-            return redirect()->route('cart.index')->with('success', 'Keranjang masih kosong.');
+            return redirect()->route('cart.index')->with('success', 'Your cart is empty.');
         }
 
         return view('user.checkout', [
@@ -72,7 +72,7 @@ class CheckoutController extends Controller
             Session::put('cart', $cart);
 
             return redirect()->route('cart.index')
-                ->with('success', 'Semua produk di keranjang sudah tidak tersedia.');
+                ->with('success', 'None of the products in your cart are available anymore.');
         }
 
         $order = DB::transaction(function () use ($data, $items, $total) {

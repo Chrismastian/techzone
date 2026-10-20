@@ -21,10 +21,10 @@
         <div class="row g-4">
             <div class="col-md-7">
                 <div style="background:#fff; border-radius:12px; border:1px solid #e2e8f0; padding:1.75rem;">
-                    <h6 class="fw-bold mb-3">Data Pengiriman</h6>
+                    <h6 class="fw-bold mb-3">Shipping Details</h6>
 
                     <div class="mb-3">
-                        <label class="form-label" for="nama">Nama Lengkap <span class="text-danger">*</span></label>
+                        <label class="form-label" for="nama">Full Name <span class="text-danger">*</span></label>
                         <input type="text" class="form-control @error('nama') is-invalid @enderror"
                                id="nama" name="nama" value="{{ old('nama') }}" required>
                         @error('nama')<div class="invalid-feedback">{{ $message }}</div>@enderror
@@ -38,7 +38,7 @@
                             @error('email')<div class="invalid-feedback">{{ $message }}</div>@enderror
                         </div>
                         <div class="col-md-6 mb-3">
-                            <label class="form-label" for="telepon">Nomor Telepon <span class="text-danger">*</span></label>
+                            <label class="form-label" for="telepon">Phone Number <span class="text-danger">*</span></label>
                             <input type="text" class="form-control @error('telepon') is-invalid @enderror"
                                    id="telepon" name="telepon" value="{{ old('telepon') }}" required>
                             @error('telepon')<div class="invalid-feedback">{{ $message }}</div>@enderror
@@ -46,14 +46,14 @@
                     </div>
 
                     <div class="mb-3">
-                        <label class="form-label" for="alamat">Alamat <span class="text-danger">*</span></label>
+                        <label class="form-label" for="alamat">Address <span class="text-danger">*</span></label>
                         <textarea class="form-control @error('alamat') is-invalid @enderror"
                                   id="alamat" name="alamat" rows="3" required>{{ old('alamat') }}</textarea>
                         @error('alamat')<div class="invalid-feedback">{{ $message }}</div>@enderror
                     </div>
 
                     <div class="mb-0">
-                        <label class="form-label" for="catatan">Catatan (opsional)</label>
+                        <label class="form-label" for="catatan">Note (optional)</label>
                         <textarea class="form-control" id="catatan" name="catatan" rows="2">{{ old('catatan') }}</textarea>
                     </div>
                 </div>
@@ -61,7 +61,7 @@
 
             <div class="col-md-5">
                 <div style="background:#fff; border-radius:12px; border:1px solid #e2e8f0; padding:1.75rem;">
-                    <h6 class="fw-bold mb-3">Ringkasan Pesanan</h6>
+                    <h6 class="fw-bold mb-3">Order Summary</h6>
 
                     @foreach($cart as $key => $item)
                         <div class="d-flex justify-content-between gap-2 mb-2" style="font-size:.9rem;">
@@ -80,7 +80,7 @@
                     </div>
 
                     <button type="submit" class="btn btn-primary w-100 py-2" style="border-radius:8px;">
-                        <i class="bi bi-bag-check me-1"></i> Buat Pesanan
+                        <i class="bi bi-bag-check me-1"></i> Place Order
                     </button>
                 </div>
             </div>

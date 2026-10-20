@@ -14,19 +14,19 @@
                 <div class="container-fluid">
 
                     <!-- Page Heading -->
-                    <h1 class="h3 mb-4 text-gray-800">Data Storage</h1>
+                    <h1 class="h3 mb-4 text-gray-800">Storage List</h1>
 
-                    <a href="{{ url('/admin/tambah_storage') }}" class="btn btn-secondary">Tambah Data</a>
+                    <a href="{{ url('/admin/tambah_storage') }}" class="btn btn-secondary">Add Product</a>
                     <br><br>
                     <table class="table">
                 <thead>
                     <tr>
                     
                     <th scope="col" style="width: 5%">No</th>
-                    <th scope="col" style="width: 40%">Nama</th>
-                    <th scope="col" style="width: 15%">Harga</th>
-                    <th scope="col" style="width: 20%">Gambar</th>
-                    <th scope="col" style="width: 20%">Aksi</th>
+                    <th scope="col" style="width: 40%">Name</th>
+                    <th scope="col" style="width: 15%">Price</th>
+                    <th scope="col" style="width: 20%">Image</th>
+                    <th scope="col" style="width: 20%">Actions</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -46,7 +46,7 @@
                                 <a href="{{ url('admin/edit_storage/' . $item->id) }}" class="btn btn-warning btn-sm">Edit</a>
                                 <form action="{{ url('admin/hapus_storage/' . $item->id) }}" method="POST" style="margin: 0;">
                                     @csrf
-                                    <button type="submit" class="btn btn-danger btn-sm">Hapus</button>
+                                    <button type="submit" class="btn btn-danger btn-sm">Delete</button>
                                 </form>
                             </div>
                         </td>

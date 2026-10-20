@@ -15,17 +15,17 @@
 
                       <div class="card ml-auto mr-auto" style="width: 36rem;">
     <div class="card-header bg-primary text-white">
-    Tambah Strorage
+    Add Storage
   </div>
   <div class="card-body">
     <div class="mb-3">
         <form action="{{ url('admin/simpan_storage') }}" method="POST" enctype="multipart/form-data">
             @csrf
-  <label class="form-label">Nama</label>
+  <label class="form-label">Name</label>
   <input type="text" class="form-control" name="nama">
-  <label class="form-label">Harga</label>
+  <label class="form-label">Price</label>
   <input type="text" class="form-control" name="harga">
-    <label class="form-label">Gambar</label>
+    <label class="form-label">Image</label>
   <input type="file" class="form-control" name="gambar">
   <button type="submit" class="btn btn-secondary mt-5">Submit</button>
 </div>

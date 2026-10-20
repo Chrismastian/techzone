@@ -12,7 +12,7 @@
 
 <div class="container-fluid">
 
-    <h1 class="h3 mb-4 text-gray-800">Pesanan</h1>
+    <h1 class="h3 mb-4 text-gray-800">Orders</h1>
 
     @if(session('success'))
         <div class="alert alert-success">{{ session('success') }}</div>
@@ -21,19 +21,19 @@
     <div class="card shadow">
         <div class="card-body">
             @if($orders->isEmpty())
-                <p class="text-muted mb-0">Belum ada pesanan.</p>
+                <p class="text-muted mb-0">No orders yet.</p>
             @else
                 <div class="table-responsive">
                     <table class="table table-bordered table-sm mb-0">
                         <thead class="thead-light">
                             <tr>
-                                <th>Kode</th>
-                                <th>Pelanggan</th>
-                                <th>Kontak</th>
-                                <th>Produk</th>
+                                <th>Code</th>
+                                <th>Customer</th>
+                                <th>Contact</th>
+                                <th>Products</th>
                                 <th class="text-right">Total</th>
                                 <th>Status</th>
-                                <th>Tanggal</th>
+                                <th>Date</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -57,7 +57,7 @@
                                             </div>
                                         @endforeach
                                         @if($order->catatan)
-                                            <small class="text-muted d-block mt-1">Catatan: {{ $order->catatan }}</small>
+                                            <small class="text-muted d-block mt-1">Note: {{ $order->catatan }}</small>
                                         @endif
                                     </td>
                                     <td class="text-right align-middle">Rp {{ number_format($order->total, 0, ',', '.') }}</td>
@@ -70,7 +70,7 @@
                                                     <option value="{{ $s }}" @selected($order->status === $s)>{{ $s }}</option>
                                                 @endforeach
                                             </select>
-                                            <button type="submit" class="btn btn-sm btn-primary">Simpan</button>
+                                            <button type="submit" class="btn btn-sm btn-primary">Save</button>
                                         </form>
                                     </td>
                                     <td class="align-middle">{{ $order->created_at->format('d M Y H:i') }}</td>

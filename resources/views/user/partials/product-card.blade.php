@@ -15,7 +15,7 @@
         </div>
         <a href="{{ route('user.product.show', [$category, $product->id]) }}"
            class="btn-detail">
-            Lihat Detail
+            View Details
         </a>
     </div>
 </div>

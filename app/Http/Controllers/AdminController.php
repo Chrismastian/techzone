@@ -39,7 +39,7 @@ class AdminController extends Controller
 
         Order::findOrFail($id)->update($validated);
 
-        return back()->with('success', 'Status pesanan diperbarui.');
+        return back()->with('success', 'Order status updated.');
     }
     public function keyboard()
 {

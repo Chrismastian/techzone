@@ -1,6 +1,6 @@
 @extends('layouts.user')
 
-@section('title', 'Beranda - TechZone')
+@section('title', 'Home - TechZone')
 
 @section('content')
 
@@ -10,10 +10,10 @@
         <div class="row align-items-center">
             <div class="col-lg-6">
                 <p class="mb-2" style="opacity:.75; font-size:.85rem; text-transform:uppercase; letter-spacing:.1em">
-                    Aksesoris Komputer & Gaming
+                    Computer & Gaming Accessories
                 </p>
-                <h1>Temukan Gear Terbaik<br>untuk Setup Kamu</h1>
-                <p class="mb-3">Keyboard, mouse, headset, monitor, dan storage dari brand terpercaya dengan harga terjangkau.</p>
+                <h1>Find the Best Gear<br>for Your Setup</h1>
+                <p class="mb-3">Keyboards, mice, headsets, monitors, and storage from trusted brands at fair prices.</p>
 
                 {{-- Category pills --}}
                 <div class="d-flex flex-wrap gap-2 mt-3">
@@ -50,7 +50,7 @@
     <section class="mb-5">
         <div class="section-heading">
             <h4><i class="bi bi-keyboard text-primary"></i> Keyboard</h4>
-            <a href="{{ route('user.category', 'keyboard') }}">Lihat Semua <i class="bi bi-arrow-right"></i></a>
+            <a href="{{ route('user.category', 'keyboard') }}">View All <i class="bi bi-arrow-right"></i></a>
         </div>
         <div class="row g-3">
             @foreach($keyboards as $product)
@@ -70,7 +70,7 @@
     <section class="mb-5">
         <div class="section-heading">
             <h4><i class="bi bi-mouse text-primary"></i> Mouse</h4>
-            <a href="{{ route('user.category', 'mouse') }}">Lihat Semua <i class="bi bi-arrow-right"></i></a>
+            <a href="{{ route('user.category', 'mouse') }}">View All <i class="bi bi-arrow-right"></i></a>
         </div>
         <div class="row g-3">
             @foreach($mouses as $product)
@@ -90,7 +90,7 @@
     <section class="mb-5">
         <div class="section-heading">
             <h4><i class="bi bi-headset text-primary"></i> Headset</h4>
-            <a href="{{ route('user.category', 'headset') }}">Lihat Semua <i class="bi bi-arrow-right"></i></a>
+            <a href="{{ route('user.category', 'headset') }}">View All <i class="bi bi-arrow-right"></i></a>
         </div>
         <div class="row g-3">
             @foreach($headsets as $product)
@@ -110,7 +110,7 @@
     <section class="mb-5">
         <div class="section-heading">
             <h4><i class="bi bi-display text-primary"></i> Monitor</h4>
-            <a href="{{ route('user.category', 'monitor') }}">Lihat Semua <i class="bi bi-arrow-right"></i></a>
+            <a href="{{ route('user.category', 'monitor') }}">View All <i class="bi bi-arrow-right"></i></a>
         </div>
         <div class="row g-3">
             @foreach($monitors as $product)
@@ -130,7 +130,7 @@
     <section class="mb-5">
         <div class="section-heading">
             <h4><i class="bi bi-device-hdd text-primary"></i> Storage</h4>
-            <a href="{{ route('user.category', 'storage') }}">Lihat Semua <i class="bi bi-arrow-right"></i></a>
+            <a href="{{ route('user.category', 'storage') }}">View All <i class="bi bi-arrow-right"></i></a>
         </div>
         <div class="row g-3">
             @foreach($storages as $product)
@@ -145,12 +145,12 @@
     </section>
     @endif
 
-    {{-- Jika tidak ada produk sama sekali --}}
+    {{-- Empty state: no products at all --}}
     @if($keyboards->isEmpty() && $mouses->isEmpty() && $headsets->isEmpty() && $monitors->isEmpty() && $storages->isEmpty())
     <div class="empty-state">
         <i class="bi bi-box-seam d-block"></i>
-        <h5>Belum ada produk tersedia</h5>
-        <p>Admin belum menambahkan produk. Silakan cek kembali nanti.</p>
+        <h5>No products available yet</h5>
+        <p>The admin has not added any products yet. Please check back later.</p>
     </div>
     @endif
 

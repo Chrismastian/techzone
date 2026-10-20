@@ -21,13 +21,13 @@
     <div class="mb-3">
         <form action="{{ url('admin/update_storage/' . $data_storage->id) }}" method="POST">
             @csrf
-  <label class="form-label">Nama</label>
+  <label class="form-label">Name</label>
   <input type="text" class="form-control" name="nama" value="{{ $data_storage->nama }}">
-  <label class="form-label">Harga</label>
+  <label class="form-label">Price</label>
   <input type="text" class="form-control" name="harga" value="{{ $data_storage->harga }}">
-  <label class="form-label">Gambar</label>
+  <label class="form-label">Image</label>
   <input type="file" class="form-control" name="gambar">
-  <button type="submit" class="btn btn-primary mt-5">Simpan</button>
+  <button type="submit" class="btn btn-primary mt-5">Save</button>
 </div>
 
   </div>

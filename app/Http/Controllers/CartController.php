@@ -33,7 +33,7 @@ class CartController extends Controller
 
         Session::put('cart', $cart);
 
-        return redirect()->back()->with('success', $product->nama . ' ditambahkan ke keranjang.');
+        return redirect()->back()->with('success', $product->nama . ' added to cart.');
     }
 
     public function update(Request $request, string $key)
@@ -54,14 +54,14 @@ class CartController extends Controller
         unset($cart[$key]);
         Session::put('cart', $cart);
 
-        return redirect()->route('cart.index')->with('success', 'Produk dihapus dari keranjang.');
+        return redirect()->route('cart.index')->with('success', 'Product removed from cart.');
     }
 
     public function clear()
     {
         Session::forget('cart');
 
-        return redirect()->route('cart.index')->with('success', 'Keranjang dikosongkan.');
+        return redirect()->route('cart.index')->with('success', 'Cart cleared.');
     }
 
     private function cart(): array

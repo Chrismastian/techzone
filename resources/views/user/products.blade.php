@@ -22,7 +22,7 @@ $icon = $icons[$category] ?? 'bi-box';
         <nav aria-label="breadcrumb" style="font-size:.85rem; margin-bottom:.5rem">
             <ol class="breadcrumb mb-0">
                 <li class="breadcrumb-item">
-                    <a href="{{ route('user.home') }}" class="text-decoration-none text-primary">Beranda</a>
+                    <a href="{{ route('user.home') }}" class="text-decoration-none text-primary">Home</a>
                 </li>
                 <li class="breadcrumb-item active">{{ $category }}</li>
             </ol>
@@ -32,7 +32,7 @@ $icon = $icons[$category] ?? 'bi-box';
             <h4 class="fw-bold mb-0 d-flex align-items-center gap-2">
                 <i class="bi {{ $icon }} text-primary"></i> {{ $category }}
                 @if($products->total())
-                    <span class="badge-category">{{ $products->total() }} produk</span>
+                    <span class="badge-category">{{ $products->total() }} products</span>
                 @endif
             </h4>
 
@@ -40,7 +40,7 @@ $icon = $icons[$category] ?? 'bi-box';
             <form action="{{ route('user.category', $slug) }}" method="GET"
                   class="d-flex gap-2" style="min-width:260px">
                 <input type="text" name="search" class="form-control form-control-sm"
-                       placeholder="Cari {{ $category }}..."
+                       placeholder="Search {{ $category }}..."
                        value="{{ request('search') }}"
                        style="border-radius:8px;">
                 <button type="submit" class="btn btn-primary btn-sm px-3"
@@ -58,7 +58,7 @@ $icon = $icons[$category] ?? 'bi-box';
 
         @if(request('search'))
             <p class="mb-0 mt-2 text-muted" style="font-size:.875rem">
-                Hasil pencarian untuk "<strong>{{ request('search') }}</strong>"
+                Search results for "<strong>{{ request('search') }}</strong>"
             </p>
         @endif
     </div>
@@ -90,14 +90,14 @@ $icon = $icons[$category] ?? 'bi-box';
         <div class="empty-state">
             <i class="bi {{ $icon }} d-block"></i>
             @if(request('search'))
-                <h5>Produk tidak ditemukan</h5>
-                <p>Tidak ada {{ $category }} yang cocok dengan "{{ request('search') }}".</p>
+                <h5>No products found</h5>
+                <p>No {{ $category }} matched "{{ request('search') }}".</p>
                 <a href="{{ route('user.category', $slug) }}" class="btn btn-primary btn-sm mt-2">
-                    Lihat Semua {{ $category }}
+                    View All {{ $category }}
                 </a>
             @else
-                <h5>Belum ada produk {{ $category }}</h5>
-                <p>Admin belum menambahkan produk untuk kategori ini.</p>
+                <h5>No {{ $category }} products yet</h5>
+                <p>The admin has not added any products in this category yet.</p>
             @endif
         </div>
     @endif

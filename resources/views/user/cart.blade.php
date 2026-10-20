@@ -1,10 +1,10 @@
 @extends('layouts.user')
 
-@section('title', 'Keranjang Belanja - TechZone')
+@section('title', 'Shopping Cart - TechZone')
 
 @section('content')
 <div class="container py-4">
-    <h4 class="mb-4">Keranjang Belanja</h4>
+    <h4 class="mb-4">Shopping Cart</h4>
 
     @if(session('success'))
         <div class="alert alert-success">{{ session('success') }}</div>
@@ -15,11 +15,11 @@
             <table class="table table-bordered bg-white">
                 <thead>
                     <tr>
-                        <th>Produk</th>
-                        <th>Harga</th>
-                        <th>Jumlah</th>
+                        <th>Product</th>
+                        <th>Price</th>
+                        <th>Qty</th>
                         <th>Subtotal</th>
-                        <th>Aksi</th>
+                        <th>Actions</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -50,7 +50,7 @@
                             <td>
                                 <form action="{{ route('cart.remove', $key) }}" method="POST">
                                     @csrf
-                                    <button type="submit" class="btn btn-sm btn-danger">Hapus</button>
+                                    <button type="submit" class="btn btn-sm btn-danger">Remove</button>
                                 </form>
                             </td>
                         </tr>
@@ -68,13 +68,13 @@
         <div class="d-flex justify-content-between">
             <form action="{{ route('cart.clear') }}" method="POST">
                 @csrf
-                <button type="submit" class="btn btn-outline-secondary">Kosongkan Keranjang</button>
+                <button type="submit" class="btn btn-outline-secondary">Clear Cart</button>
             </form>
             <a href="{{ route('checkout.index') }}" class="btn btn-primary">Checkout</a>
         </div>
     @else
-        <div class="alert alert-info">Keranjang belanja kosong.</div>
-        <a href="{{ route('user.home') }}" class="btn btn-primary">Kembali Belanja</a>
+        <div class="alert alert-info">Your cart is empty.</div>
+        <a href="{{ route('user.home') }}" class="btn btn-primary">Continue Shopping</a>
     @endif
 </div>
 @endsection

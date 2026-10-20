@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 class UserProductController extends Controller
 {
     /**
-     * Halaman utama user - menampilkan semua kategori produk
+     * Home page - shows every product category
      */
     public function index()
     {
@@ -25,7 +25,7 @@ class UserProductController extends Controller
     }
 
     /**
-     * Halaman daftar produk per kategori
+     * Product list for one category
      */
     public function category(Request $request, string $category)
     {
@@ -45,7 +45,7 @@ class UserProductController extends Controller
     }
 
     /**
-     * Halaman detail produk
+     * Product detail page
      */
     public function show($category, $id)
     {

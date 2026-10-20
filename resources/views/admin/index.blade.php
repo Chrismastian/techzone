@@ -23,7 +23,7 @@
         <div class="col-xl-3 col-md-6 mb-4">
             <div class="card border-0 shadow h-100 py-2">
                 <div class="card-body">
-                    <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Pesanan Pending</div>
+                    <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Pending Orders</div>
                     <div class="h5 mb-0 font-weight-bold">{{ $pending }}</div>
                 </div>
             </div>
@@ -31,7 +31,7 @@
         <div class="col-xl-3 col-md-6 mb-4">
             <div class="card border-0 shadow h-100 py-2">
                 <div class="card-body">
-                    <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Pendapatan (paid + shipped)</div>
+                    <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Revenue (paid + shipped)</div>
                     <div class="h5 mb-0 font-weight-bold">Rp {{ number_format($revenue, 0, ',', '.') }}</div>
                 </div>
             </div>
@@ -40,23 +40,23 @@
 
     <div class="card shadow mb-4">
         <div class="card-header py-3 d-flex justify-content-between align-items-center">
-            <span class="h6 mb-0">Pesanan Terbaru</span>
-            <a href="{{ url('/admin/pesanan') }}" class="btn btn-sm btn-primary">Lihat Semua</a>
+            <span class="h6 mb-0">Recent Orders</span>
+            <a href="{{ url('/admin/pesanan') }}" class="btn btn-sm btn-primary">View All</a>
         </div>
         <div class="card-body">
             @if($recentOrders->isEmpty())
-                <p class="text-muted mb-0">Belum ada pesanan masuk.</p>
+                <p class="text-muted mb-0">No orders yet.</p>
             @else
                 <div class="table-responsive">
                     <table class="table table-sm mb-0">
                         <thead class="thead-light">
                             <tr>
-                                <th>Kode</th>
-                                <th>Pelanggan</th>
+                                <th>Code</th>
+                                <th>Customer</th>
                                 <th>Item</th>
                                 <th class="text-right">Total</th>
                                 <th>Status</th>
-                                <th>Tanggal</th>
+                                <th>Date</th>
                             </tr>
                         </thead>
                         <tbody>

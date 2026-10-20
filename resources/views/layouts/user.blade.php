@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TechZone - @yield('title', 'Toko Aksesoris Komputer')</title>
+    <title>TechZone - @yield('title', 'Computer Accessories Store')</title>
 
     {{-- Bootstrap 5 --}}
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -291,7 +291,7 @@
                 <form action="{{ url()->current() }}" method="GET">
                     <div class="input-group">
                         <input type="text" name="search" class="form-control"
-                               placeholder="Cari produk..."
+                               placeholder="Search products..."
                                value="{{ request('search') }}">
                         <button class="btn-search" type="submit">
                             <i class="bi bi-search"></i>
@@ -304,7 +304,7 @@
             <ul class="nav-categories d-none d-lg-flex ms-auto">
                 @php $currentRoute = Route::currentRouteName(); @endphp
                 <li><a href="{{ route('user.home') }}"
-                       class="{{ $currentRoute === 'user.home' ? 'active' : '' }}">Beranda</a></li>
+                       class="{{ $currentRoute === 'user.home' ? 'active' : '' }}">Home</a></li>
                 <li><a href="{{ route('user.category', 'keyboard') }}"
                        class="{{ request('category') === 'keyboard' ? 'active' : '' }}">Keyboard</a></li>
                 <li><a href="{{ route('user.category', 'mouse') }}"
@@ -314,7 +314,7 @@
                 <li><a href="{{ route('user.category', 'monitor') }}"
                        class="{{ request('category') === 'monitor' ? 'active' : '' }}">Monitor</a></li>
                 <li><a href="{{ route('cart.index') }}"
-                       class="{{ $currentRoute === 'cart.index' ? 'active' : '' }}"><i class="bi bi-cart3"></i> Keranjang</a></li>
+                       class="{{ $currentRoute === 'cart.index' ? 'active' : '' }}"><i class="bi bi-cart3"></i> Cart</a></li>
             </ul>
 
             {{-- Mobile menu toggle --}}
@@ -335,7 +335,7 @@
     <div class="offcanvas-body">
         <ul class="list-unstyled">
             <li class="mb-2"><a href="{{ route('user.home') }}" class="text-decoration-none text-dark fw-500">
-                <i class="bi bi-house me-2 text-primary"></i> Beranda</a></li>
+                <i class="bi bi-house me-2 text-primary"></i> Home</a></li>
             <li class="mb-2"><a href="{{ route('user.category', 'keyboard') }}" class="text-decoration-none text-dark">
                 <i class="bi bi-keyboard me-2 text-primary"></i> Keyboard</a></li>
             <li class="mb-2"><a href="{{ route('user.category', 'mouse') }}" class="text-decoration-none text-dark">
@@ -362,12 +362,12 @@
             <div class="col-md-4">
                 <h6><i class="bi bi-laptop me-2"></i>TECHZONE</h6>
                 <p style="font-size:.875rem; line-height:1.7">
-                    Toko aksesoris komputer & gaming terpercaya. Produk original,
-                    harga terjangkau, pengiriman cepat ke seluruh Indonesia.
+                    Your trusted computer and gaming accessories store. Genuine products,
+                    fair prices, fast shipping across Indonesia.
                 </p>
             </div>
             <div class="col-md-2">
-                <h6>Kategori</h6>
+                <h6>Categories</h6>
                 <ul class="list-unstyled" style="line-height:2">
                     <li><a href="{{ route('user.category', 'keyboard') }}">Keyboard</a></li>
                     <li><a href="{{ route('user.category', 'mouse') }}">Mouse</a></li>
@@ -377,15 +377,15 @@
                 </ul>
             </div>
             <div class="col-md-3">
-                <h6>Informasi</h6>
+                <h6>Information</h6>
                 <ul class="list-unstyled" style="line-height:2">
-                    <li><a href="#">Tentang Kami</a></li>
-                    <li><a href="#">Cara Pemesanan</a></li>
-                    <li><a href="#">Kebijakan Privasi</a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">How to Order</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
                 </ul>
             </div>
             <div class="col-md-3">
-                <h6>Kontak</h6>
+                <h6>Contact</h6>
                 <p style="font-size:.875rem; line-height:2">
                     <i class="bi bi-envelope me-2"></i>chrismastian@icloud.com<br>
                     <i class="bi bi-telephone me-2"></i>+62 852 9827 8468<br>
@@ -394,7 +394,7 @@
             </div>
         </div>
         <div class="footer-bottom text-center">
-            &copy; {{ date('Y') }} TechZone. Semua hak dilindungi.
+            &copy; {{ date('Y') }} TechZone. All rights reserved.
         </div>
     </div>
 </footer>

@@ -21,7 +21,7 @@ $icon = $icons[$category] ?? 'bi-box';
         <nav aria-label="breadcrumb" style="font-size:.85rem">
             <ol class="breadcrumb mb-0">
                 <li class="breadcrumb-item">
-                    <a href="{{ route('user.home') }}" class="text-decoration-none text-primary">Beranda</a>
+                    <a href="{{ route('user.home') }}" class="text-decoration-none text-primary">Home</a>
                 </li>
                 <li class="breadcrumb-item">
                     <a href="{{ route('user.category', $category) }}" class="text-decoration-none text-primary">
@@ -51,7 +51,7 @@ $icon = $icons[$category] ?? 'bi-box';
                 @else
                     <div class="text-center text-muted">
                         <i class="bi {{ $icon }}" style="font-size:5rem; opacity:.3;"></i>
-                        <p class="mt-2 small">Gambar tidak tersedia</p>
+                        <p class="mt-2 small">Image not available</p>
                     </div>
                 @endif
             </div>
@@ -71,22 +71,22 @@ $icon = $icons[$category] ?? 'bi-box';
                     Rp {{ number_format($product->harga, 0, ',', '.') }}
                 </div>
 
-                {{-- Deskripsi jika ada --}}
+                {{-- Description, if any --}}
                 @if(isset($product->deskripsi) && $product->deskripsi)
                 <div class="mb-3">
-                    <h6 class="fw-semibold mb-1">Deskripsi</h6>
+                    <h6 class="fw-semibold mb-1">Description</h6>
                     <p class="text-muted" style="font-size:.925rem; line-height:1.7">
                         {{ $product->deskripsi }}
                     </p>
                 </div>
                 @endif
 
-                {{-- Info tambahan --}}
+                {{-- Extra info --}}
                 <div style="background:#f8fafc; border-radius:8px; padding:1rem; font-size:.875rem;">
                     <div class="d-flex gap-3 flex-wrap text-muted">
-                        <span><i class="bi bi-shield-check text-success me-1"></i> Produk Original</span>
-                        <span><i class="bi bi-truck text-primary me-1"></i> Pengiriman Cepat</span>
-                        <span><i class="bi bi-arrow-return-left text-warning me-1"></i> Garansi Resmi</span>
+                        <span><i class="bi bi-shield-check text-success me-1"></i> Genuine Product</span>
+                        <span><i class="bi bi-truck text-primary me-1"></i> Fast Shipping</span>
+                        <span><i class="bi bi-arrow-return-left text-warning me-1"></i> Official Warranty</span>
                     </div>
                 </div>
 
@@ -94,12 +94,12 @@ $icon = $icons[$category] ?? 'bi-box';
                 <div class="mt-3 d-flex gap-2 flex-wrap">
                     <a href="{{ route('user.category', $category) }}"
                        class="btn btn-outline-primary btn-sm" style="border-radius:8px;">
-                        <i class="bi bi-arrow-left me-1"></i> Kembali ke {{ $categoryName }}
+                        <i class="bi bi-arrow-left me-1"></i> Back to {{ $categoryName }}
                     </a>
                     <form action="{{ route('cart.add', [$category, $product->id]) }}" method="POST">
                         @csrf
                         <button type="submit" class="btn btn-primary btn-sm" style="border-radius:8px;">
-                            <i class="bi bi-cart-plus me-1"></i> Tambah ke Keranjang
+                            <i class="bi bi-cart-plus me-1"></i> Add to Cart
                         </button>
                     </form>
                 </div>
@@ -107,12 +107,12 @@ $icon = $icons[$category] ?? 'bi-box';
         </div>
     </div>
 
-    {{-- ─── PRODUK TERKAIT ─── --}}
+    {{-- ─── RELATED PRODUCTS ─── --}}
     @if($related->count())
     <section class="mt-5">
         <div class="section-heading">
-            <h4><i class="bi {{ $icon }} text-primary"></i> Produk Lainnya</h4>
-            <a href="{{ route('user.category', $category) }}">Lihat Semua <i class="bi bi-arrow-right"></i></a>
+            <h4><i class="bi {{ $icon }} text-primary"></i> Related Products</h4>
+            <a href="{{ route('user.category', $category) }}">View All <i class="bi bi-arrow-right"></i></a>
         </div>
         <div class="row g-3">
             @foreach($related as $rel)
