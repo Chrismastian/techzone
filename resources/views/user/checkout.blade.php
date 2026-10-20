@@ -20,7 +20,7 @@
         @csrf
         <div class="row g-4">
             <div class="col-md-7">
-                <div style="background:#fff; border-radius:12px; border:1px solid #e2e8f0; padding:1.75rem;">
+                <div style="background:#fff; border-radius:12px; border:1px solid var(--tz-border); padding:1.75rem;">
                     <h6 class="fw-bold mb-3">Shipping Details</h6>
 
                     <div class="mb-3">
@@ -60,7 +60,7 @@
             </div>
 
             <div class="col-md-5">
-                <div style="background:#fff; border-radius:12px; border:1px solid #e2e8f0; padding:1.75rem;">
+                <div style="background:#fff; border-radius:12px; border:1px solid var(--tz-border); padding:1.75rem;">
                     <h6 class="fw-bold mb-3">Order Summary</h6>
 
                     @foreach($cart as $key => $item)
@@ -74,7 +74,7 @@
 
                     <div class="d-flex justify-content-between align-items-center mb-3">
                         <span class="fw-bold">Total</span>
-                        <span class="fw-bold" style="font-size:1.25rem; color:#2563eb;">
+                        <span class="fw-bold" style="font-size:1.25rem; color:var(--tz-blue);">
                             Rp {{ number_format($total, 0, ',', '.') }}
                         </span>
                     </div>

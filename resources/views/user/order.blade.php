@@ -8,11 +8,11 @@
         <i class="bi bi-check-circle text-success" style="font-size:3.5rem;"></i>
         <h4 class="mt-2">Order Placed Successfully</h4>
         <p class="text-muted mb-1">Your order number:</p>
-        <p class="fw-bold" style="font-size:1.2rem; color:#2563eb;">{{ $order->code }}</p>
+        <p class="fw-bold" style="font-size:1.2rem; color:var(--tz-blue);">{{ $order->code }}</p>
         <p class="text-muted small">Save this number. The admin will contact you to confirm.</p>
     </div>
 
-    <div style="background:#fff; border-radius:12px; border:1px solid #e2e8f0; padding:1.75rem;">
+    <div style="background:#fff; border-radius:12px; border:1px solid var(--tz-border); padding:1.75rem;">
         <h6 class="fw-bold mb-3">Order Details</h6>
 
         <div class="row mb-3" style="font-size:.9rem;">

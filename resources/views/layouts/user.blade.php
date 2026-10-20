@@ -16,13 +16,13 @@
 
     <style>
         :root {
-            --tz-blue:       #2563eb;
-            --tz-blue-dark:  #1d4ed8;
-            --tz-blue-light: #eff6ff;
-            --tz-gray:       #f8fafc;
-            --tz-border:     #e2e8f0;
-            --tz-text:       #0f0f2b;
-            --tz-muted:      #64748b;
+            --tz-blue:       #1f3a5f;   /* navy: primary */
+            --tz-blue-dark:  #16283f;
+            --tz-blue-light: #eaeef3;
+            --tz-gray:       #f4f5f7;
+            --tz-border:     #d9dde2;
+            --tz-text:       #101215;   /* near black */
+            --tz-muted:      #5a636e;
         }
 
         * { box-sizing: border-box; }
@@ -121,16 +121,16 @@
         /* ── FOOTER ── */
         .footer-tz {
             background: #000000;
-            color: #94a3b8;
+            color: #b8bfc7;
             padding: 2.5rem 0 1.5rem;
             margin-top: 4rem;
         }
 
-        .footer-tz h6 { color: #f1f5f9; font-weight: 700; margin-bottom: 1rem; }
-        .footer-tz a  { color: #94a3b8; text-decoration: none; font-size: .875rem; }
+        .footer-tz h6 { color: #ffffff; font-weight: 700; margin-bottom: 1rem; }
+        .footer-tz a  { color: #b8bfc7; text-decoration: none; font-size: .875rem; }
         .footer-tz a:hover { color: #fff; }
         .footer-tz .footer-bottom {
-            border-top: 1px solid #334155;
+            border-top: 1px solid #2a2f36;
             padding-top: 1rem;
             margin-top: 1.5rem;
             font-size: .8rem;
@@ -147,7 +147,7 @@
 
         .product-card:hover {
             transform: translateY(-4px);
-            box-shadow: 0 8px 24px rgba(37,99,235,.1);
+            box-shadow: 0 8px 24px rgba(16,18,21,.12);
         }
 
         .product-card .img-wrap {
@@ -225,7 +225,7 @@
 
         /* ── HERO BANNER ── */
         .hero-banner {
-            background: linear-gradient(135deg, #1d4ed8 0%, #2563eb 50%, #3b82f6 100%);
+            background: var(--tz-blue);
             color: #fff;
             padding: 3rem 0 2.5rem;
             margin-bottom: 2.5rem;
@@ -269,6 +269,26 @@
             padding: .3rem .7rem;
             border-radius: 20px;
         }
+        /* ── THEME OVERRIDES ──
+           Bootstrap ships its own blue; keep every component on the palette. */
+        .text-primary { color: var(--tz-blue) !important; }
+        .btn-primary {
+            --bs-btn-bg: var(--tz-blue);
+            --bs-btn-border-color: var(--tz-blue);
+            --bs-btn-hover-bg: var(--tz-blue-dark);
+            --bs-btn-hover-border-color: var(--tz-blue-dark);
+            --bs-btn-active-bg: var(--tz-blue-dark);
+            --bs-btn-active-border-color: var(--tz-blue-dark);
+        }
+        .btn-outline-primary {
+            --bs-btn-color: var(--tz-blue);
+            --bs-btn-border-color: var(--tz-blue);
+            --bs-btn-hover-bg: var(--tz-blue);
+            --bs-btn-hover-border-color: var(--tz-blue);
+            --bs-btn-active-bg: var(--tz-blue-dark);
+            --bs-btn-active-border-color: var(--tz-blue-dark);
+        }
+        .breadcrumb-item a { color: var(--tz-blue); }
     </style>
 
     @stack('styles')

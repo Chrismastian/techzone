@@ -41,7 +41,7 @@ $icon = $icons[$category] ?? 'bi-box';
 
         {{-- ─── PRODUCT IMAGE ─── --}}
         <div class="col-md-5">
-            <div style="background:#fff; border-radius:12px; border:1px solid #e2e8f0;
+            <div style="background:#fff; border-radius:12px; border:1px solid var(--tz-border);
                         display:flex; align-items:center; justify-content:center;
                         min-height:320px; padding: 2rem;">
                 @if($product->gambar)
@@ -59,7 +59,7 @@ $icon = $icons[$category] ?? 'bi-box';
 
         {{-- ─── PRODUCT INFO ─── --}}
         <div class="col-md-7">
-            <div style="background:#fff; border-radius:12px; border:1px solid #e2e8f0; padding:2rem; height:100%;">
+            <div style="background:#fff; border-radius:12px; border:1px solid var(--tz-border); padding:2rem; height:100%;">
 
                 <span class="badge-category mb-3 d-inline-block">
                     <i class="bi {{ $icon }} me-1"></i> {{ $categoryName }}
@@ -67,7 +67,7 @@ $icon = $icons[$category] ?? 'bi-box';
 
                 <h3 class="fw-bold mb-2">{{ $product->nama }}</h3>
 
-                <div style="font-size:1.75rem; font-weight:800; color:#2563eb; margin-bottom:1.5rem;">
+                <div style="font-size:1.75rem; font-weight:800; color:var(--tz-blue); margin-bottom:1.5rem;">
                     Rp {{ number_format($product->harga, 0, ',', '.') }}
                 </div>
 
@@ -82,7 +82,7 @@ $icon = $icons[$category] ?? 'bi-box';
                 @endif
 
                 {{-- Extra info --}}
-                <div style="background:#f8fafc; border-radius:8px; padding:1rem; font-size:.875rem;">
+                <div style="background:var(--tz-gray); border-radius:8px; padding:1rem; font-size:.875rem;">
                     <div class="d-flex gap-3 flex-wrap text-muted">
                         <span><i class="bi bi-shield-check text-success me-1"></i> Genuine Product</span>
                         <span><i class="bi bi-truck text-primary me-1"></i> Fast Shipping</span>
